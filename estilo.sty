@@ -1,0 +1,141 @@
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm} %paquetes matematicos
+\usepackage{mathtools}
+\usepackage{cancel}
+
+%paquetes idioma
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+\usepackage{graphicx} %añadir imagenes
+
+\usepackage{listings} %codigo python resaltado
+\usepackage{xcolor} %colores
+
+%\usepackage[a4paper,left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry} %margenes y geometria de la hoja
+
+\usepackage{verbatim} %entorno comment
+\usepackage{subfig} %subfiguras
+\usepackage{float} % parametro H en figuras
+
+\usepackage[hidelinks]{hyperref} %Urls
+
+\usepackage[affil-it]{authblk}
+
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{positioning,decorations.markings}
+
+\tikzset{
+every picture/.append style={
+  execute at begin picture={\deactivatequoting},
+  execute at end picture={\activatequoting}
+  }
+}
+
+%paquetes de tablas
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\newcolumntype{M}{>{$}c<{$}} %Tipo de columna matematica
+
+%Lineas viudas y huerfanas
+\clubpenalty=10000
+\widowpenalty=10000
+
+\pretolerance=10000
+\tolerance=10000
+
+%Datos portada
+
+\author{Óscar Riquelme Moya}
+\affil
+{
+    Departamento de física aplicada\\
+    Universidad de Alicante
+    \vskip -1cm
+}
+
+%Fuentes y colores para el highlight
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{9} %bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{9}  %normal
+
+\definecolor{font}{rgb}{0.2,0.1,0.2}
+\definecolor{background}{rgb}{0.95,0.95,1}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{grey}{rgb}{0.3,0.3,0.3}
+\definecolor{red}{rgb}{1,0,0}
+
+%estilo para el codigo python
+\lstdefinestyle{Python}{language=python,
+		backgroundcolor=\color{background},
+		basicstyle=\ttm\color{font},             
+		keywordstyle=\ttb\color{deepblue},  
+		stringstyle=\color{deepgreen},
+		showspaces=false,
+		showstringspaces=false,
+		tabsize=4,
+		numbers=left,
+		otherkeywords={self},
+		emph = {__init__, as},
+		emphstyle=\ttb\color{deepred},
+		numberstyle=\color{grey},
+		numbersep=6pt,
+		stepnumber=1,
+		rulecolor=\color{black},
+		frame=single,
+		framexleftmargin=20pt}
+		
+
+
+%Cambiamos el nombre de las tablas de Cuadro a Tabla
+\AtBeginDocument{%
+  \renewcommand\tablename{Tabla}
+}
+
+\newcommand{\parcial}[2]{
+\frac{\partial #1}{\partial #2}
+}
+
+
+\newcommand{\parcialn}[3]{
+\frac{\partial ^#3 #1}{\partial #2^#3}
+}
+
+
+
+%comando para hacer figuras rapidamente
+% \fig[escala]{raiz/directorio../archivo}{caption}{label}
+\newcommand{\fig}[4][1]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=#1]{#2}
+\caption{#3}\label{#4}
+\end{center}
+\end{figure}
+}
+
+%Comandos para referenciar rápicdamente figuras tablas y ecuaciones
+\newcommand{\rfig}[1]{
+(figura \ref{#1})
+}
+
+\newcommand{\rtabla}[1]{
+(tabla \ref{#1})
+}
+\newcommand{\req}[1]{
+(ecuación \ref{#1})
+}
+\newcommand{\abs}[1]{\left| #1\right|}
+
+%Entorno paar escribir codigo python
+\lstnewenvironment{Python}{
+\lstset{style=Python}}{}
+
+\newcommand{\Pythonline}[1]{
+\lstinline[style=Python]|#1|}
+
