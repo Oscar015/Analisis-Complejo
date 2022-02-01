@@ -1,0 +1,72 @@
+\documentclass{book}
+
+\input{estilo.sty}
+
+\setlength{\parskip}{0.5em}
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\Huge\bfseries}{Bloque \thechapter \\ }{1em}{\huge}
+
+%Teoremas matemáticos
+\newtheorem{defi}{Definición}[chapter]
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{prop}{Proposición}[chapter]
+\newtheorem*{dem}{Demostración}
+\newtheorem{col}{Colorario}[chapter]
+\newtheorem{lema}{Lema}[chapter]
+\newtheorem{obs}{Observación}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\captionsetup[subfigure]{labelformat=empty}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+
+\title{Análisis de variable compleja}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\begin{comment}
+\chapter*{Preámbulo}
+\addcontentsline{toc}{chapter}{Preámbulo}
+Estos apuntes están destinados a complementar los apuntes tomados por
+los estudiantes de la asignatura homónima perteneciente al segundo año del
+Grado en Física de la Universidad de Alicante.
+Es un texto realizado fundamentalmente a partir de las notas tomadas
+durante las lecciones impartidas por el profesor Tijani Pakhrou, del departamento
+de Análisis Matemático, durante el curso académico 2021-2022, destinado exclusivamente a estudiantes y sin ánimo de lucro.
+No está exento de erratas. La edición de estos apuntes se remite a la fecha de compilación que aparece en la portada. El último tema es el que menos horas hemos echado por falta de las mismas. 
+
+Para obtener una copia del código fuente o para comunicar posibles erratas, o colaborar de cualquier forma para mejorar estos apuntes utilizad el siguiente repositorio de Github: {\color{blue}\url{https://github.com/Oscar015/Analisis-funcional}}
+
+\end{comment}
+
+\chapter{Introducción de topología} 
+
+\begin{defi}
+Sea $X$ un conjunto no vacío, una familia $\tau$ de subconjuntos de $X$ ( i.e. $\tau \subset \mathcal{P}(X)$) es una \textbf{topología} sobre $X$ si se cumplen las condiciones siguientes:
+
+\begin{description}
+\item[T1)] $\emptyset \in\tau$ y $X in \tau$
+\item[T2)] Si $A_1$ y $A_2$ son dos conjuntos arbitrarios de $\tau$ entonces
+$$ A_1 \cap A_2 \in\tau$$
+\item[T3)] Si $\mathcal{S} = \{A_i\}_{i\in I}$ es una subfamilia cualquiera de $\tau$ entonces
+$$ \bigcup_{i\in I}A_i \in \tau.$$
+\end{description}
+\end{defi}
+
+El par $(X,\tau)$ se llama espacio topológico. Los conjuntos $A \in \tau$ se llaman abiertos de la topología $\tau$ , y los elementos de $X$ son los puntos del espacio.
+
+Cuando no hay posible confusión acerca de la topología en $X$ a la que nos estamos refiriendo, designaremos el espacio $(X,\tau)$ solo por
+$X$.
+
+\begin{obs} $i\in I$ denota un indice arbitrario que puede ser numerable por ejemplo $i \in \N$ o no numerable, $i \in \R$.\end{obs}
+
+\begin{obs} 
+En el mismo conjunto $X$ podemos definir distintas topologías $\tau_1$, $\tau_2$, dando lugar a distintos espacios topológicos $(X,\tau_1)$,$(X,\tau_2)$.
+\end{obs}
+
+\end{document}
