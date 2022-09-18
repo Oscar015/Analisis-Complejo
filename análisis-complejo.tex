@@ -268,7 +268,7 @@ Sea $u(x,y)$ una función armónica en $D$ y consideremos $U$ una región rectan
 \end{prop}
 
 \begin{dem}
-Sea $P(x,y)dx + Q(x,y)dy =0$ donde $P(x,y)= -\parcial{u}{y}$ y $Q(x,y)= \parcial{u}{x}$. Como $u(x,y)$ es armónca entonces $\parcial{P}{y} = \parcial{Q}{x}$ que es una ecuación diferencial exacta y existe $v: U \longrightarrow \R$ tal que 
+Sea $P(x,y)dx + Q(x,y)dy =0$ donde $P(x,y)= -\parcial{u}{y}$ y $Q(x,y)= \parcial{u}{x}$. Como $u(x,y)$ es armónica entonces $\parcial{P}{y} = \parcial{Q}{x}$ que es una ecuación diferencial exacta y existe $v: U \longrightarrow \R$ tal que 
 $$dv = P(x,y)dx + Q(x,y)dy \Leftrightarrow \parcial{v}{x} = P = -\parcial{u}{y},\ \parcial{v}{y} = Q = \parcial{u}{x}$$
 con lo que $v(x,y)$ es conjugada armónica de $u(x,y)$. $\qed$
 \end{dem}
@@ -341,7 +341,7 @@ Sea $\gamma:[a,b]\longrightarrow \C$ un camino y $f(z), g(z)$ funciones continua
 \item $\int_\gamma (f(z)+g(z)) dz = \int_\gamma f(z)dz + \int_\gamma g(z) dz$
 \item $\int_\gamma c f(z) dz = c \int_\gamma f(z) dz, c\in\C$
 \item $\int_{-\gamma} f(z) dz = -\int_\gamma f(z) dz$ donde $-\gamma$ es el camino opuesto definido por $(-\gamma)(t) = \gamma(b+a-t) \ \forall t \in [a,b]$
-\item Si $\beta$ es otro camino tal que $\gamma + \beta$ está definido y $f(z)$ es tambien con tinua en $(\gamma+\beta)^*$ entonces:
+\item Si $\beta$ es otro camino tal que $\gamma + \beta$ está definido y $f(z)$ es también continua en $(\gamma+\beta)^*$ entonces:
 $$
 \int_{\gamma+\beta}f(z)dz = \int_\gamma f(z)dz + \int_\beta f(z)dz
 $$
@@ -356,7 +356,10 @@ Con $M_f(\gamma) = \max \{|f(z)|,z \in \gamma^* \}$ y $L(\gamma)$ la longitud de
 \end{prop}
 
 \begin{dem}
-$$\abs{\int_\gamma f(z)dz } = \abs{\int_a^b f(\gamma(t))\gamma'(t)dt}\leq \int_a^b \abs{f(\gamma(t))}\abs{\gamma'(t)}dt\leq M_f(\gamma)\int_a^b\abs{\gamma'(t)}dt =  M_f(\gamma)L(\gamma)$$
+	\begin{align*}
+		&\abs{\int_\gamma f(z)dz } = \abs{\int_a^b f(\gamma(t))\gamma'(t)dt}\leq \int_a^b \abs{f(\gamma(t))}\abs{\gamma'(t)}dt\leq\\
+		&M_f(\gamma)\int_a^b\abs{\gamma'(t)}dt =  M_f(\gamma)L(\gamma)
+	\end{align*}
 \end{dem}
 
 \begin{defi}
@@ -547,7 +550,7 @@ Sea $z \in U,\ \neq z \neq z_0,\ z_1 \neq z \Rightarrow$
 $$
 \frac{F(z)-F(z_1)}{z-z_1} = \frac{\int_{[z_0,z]}f(w)dw- \int_{[z_0,z_1]}f(w)dw}{z-z_1} = \frac{\int_{[z_0,z]}f(w)dw+ \int_{[z_1,z_0]}f(w)dw}{z-z_1}
 $$
-Por el Teorema de caucy para triángulos, tomando $\Gamma = [z_0,z]\cup [z,z_1]\cup[z_1,z_0]$ vemos que $\int_\Gamma f(w)dw = 0$. Con lo que 
+Por el Teorema de Cauchy para triángulos, tomando $\Gamma = [z_0,z]\cup [z,z_1]\cup[z_1,z_0]$ vemos que $\int_\Gamma f(w)dw = 0$. Con lo que 
 $$\frac{F(z)-F(z_1)}{z-z_1} = \frac{\int_{[z_1,z]}f(w)dw}{z-z_1}$$
 
 $$
@@ -556,7 +559,7 @@ $$
 $$
 \Rightarrow \abs{\frac{F(z)-F(z_1)}{z-z_1}-f(z_1)}\xrightarrow[z\to z_0]{} 0 \Rightarrow F'(z_1) = f(z_1)
 $$
-Podemos concluir que $\int_\gamma f(z)dz=0$ para todo $\gamma$ camido cerrado. $\qed$
+Podemos concluir que $\int_\gamma f(z)dz=0$ para todo $\gamma$ camino cerrado. $\qed$
 \end{dem}
 
 
@@ -698,7 +701,7 @@ Sea $V = D(z_0,r)$ tal que $\bar{D}(z_0,r)\subset V\subset U$ y $z\in D(z_0,r)$.
 
 $C_1 \subset V_1$ estrellado entonces tenemos que $g(w) = \frac{f(w)}{w-z},\ w\in V_!$ es analítica, por lo que
 
-$$\int_{C_1} \frac{f(w)}{w-z} dw = 0 \text{ y analogamente se tiene que } \int_{C_2} \frac{f(w)}{w-z} dw = 0$$
+$$\int_{C_1} \frac{f(w)}{w-z} dw = 0 \text{ y análogamente se tiene que } \int_{C_2} \frac{f(w)}{w-z} dw = 0$$
 \begin{align*}
 &0 = \int_{C_1} \frac{f(w)}{w-z} dw + \int_{C_2} \frac{f(w)}{w-z} dw = \int_{C} \frac{f(w)}{w-z} dw - \int_{D} \frac{f(w)}{w-z} dw\\
 &\Rightarrow \int_{C} \frac{f(w)}{w-z} dw = \int_{D} \frac{f(w)}{w-z} dw = f(z) \int_C\frac{dw}{w-z}dz + \int_C\frac{f(w)-f(z)}{w-z}dw\\
@@ -906,7 +909,7 @@ Todo polinomio $P(z)$ no constante tiene al menos una raíz, es decir, existe al
 
 
 \begin{dem}
-Sea $P(z) = a_0 + a_1z + \cdots + a_n z^n, n>1$ Por R.abs., si $P(z)$ no tubiera raíces entonces $f(z) = \frac{1}{P(z)}$ es entera. Veamos que $f$ está acotada:
+Sea $P(z) = a_0 + a_1z + \cdots + a_n z^n, n>1$ Por R.abs., si $P(z)$ no tuviera raíces entonces $f(z) = \frac{1}{P(z)}$ es entera. Veamos que $f$ está acotada:
 
 Sabemos que $\displaystyle |P(z)|\xrightarrow[|z|\to 0]{} 0 \Rightarrow \exists R>0 / |P(z)|>1 \text{ si } |z| >R \Rightarrow |f(z)| = \frac{1}{|P(z)|} <1$ si $|z|\leq R$. En consecuencia $f(z)$ es acotada en $\C$ y por el Teorema de Liouville $f(z) = cte.\ \sharp$
 \end{dem}
@@ -986,21 +989,24 @@ Por hipótesis $\exists z_0 \in U / |f(z)|\leq |f(z_0)| \ \forall z \in U$.
 
 Sea $E = \{z\in U / f(z) = f(z_0)\}$ al ser $f(z)$ continua en $U$ claramente el conjunto $E$ es cerrado respecto de $U$  y $z_0\in E \Rightarrow E \neq \emptyset$ .
 
-Sea $z\in E \Rightarrow |f(z)| = |f(z_0)| = \max\{|f(z)|\}$ entonces por el resultdo anterior $f$ es constante en un entorno de $z$. Con lo que $\exists\  r>0 $tal que $D(z,r)\subset E \Rightarrow E$ es abierto y entonces $E=U$. $\qed$
+Sea $z\in E \Rightarrow |f(z)| = |f(z_0)| = \max\{|f(z)|\}$ entonces por el resultado anterior $f$ es constante en un entorno de $z$. Con lo que $\exists\  r>0 $tal que $D(z,r)\subset E \Rightarrow E$ es abierto y entonces $E=U$. $\qed$
 \end{dem}
 
 \begin{theorem}[Principio del módulo máximo]
-Sea $f(z)$ analítica en un conjunto abierto, conexo y acotado $U$ y continua en $Fr(U)$. Si $M =\max \{|f(z)|/ z\in Fr(U)\}$, se cumple que:
+Sea $f(z)$ analítica en un conjunto abierto, conexo y acotado $U$ y continua en $Fr(U)$. 
+
+Si $M =\max \{|f(z)|/ z\in Fr(U)\}$, se cumple que:
+
 \begin{enumerate}
 \item $|f(z)|\leq M \ \forall z \in U$
 \item Si $|f(z)| = M$ para $z_0 \in U$ entonces $f(Z) = cte.$ en $U$.
 \end{enumerate}
 \end{theorem}
 
-\begin{dem}
+\begin{dem}\ \\
 \begin{enumerate}
 \item Observamos que $|f(z)|$ es también continua en $\bar{U}$ por lo que $|f(z)|$ alcanza un máximo en $\bar{U}$. Si tal máximo se alcanza en $Fr(U)$ hemos terminado.
-Si el máimo se alcanza en  $Int(U)$ entonces $\exists z_0 \in U$ tal que $|f(z)|\leq |f(z_0)| \ \forall z\in U$ entonces $f$ es constante en $U$.
+Si el máximo se alcanza en  $Int(U)$ entonces $\exists z_0 \in U$ tal que $|f(z)|\leq |f(z_0)| \ \forall z\in U$ entonces $f$ es constante en $U$.
 \item Si $\exists z_0 \in U$ tal que $|f(z_0)| = M$ entonces $f(z_0)$ es constante.$\qed$
 \end{enumerate}
 \end{dem}
@@ -1125,6 +1131,7 @@ $$
 
 \begin{defi}
 Dada una serie de potencias de números complejos $\sum_{n\geq 0} a_n(z-z_0)^n$, diremos que:
+
 \begin{enumerate}
 \item Converge en un punto $w_0$ si $\sum_{n\geq 0} a_n(w_0-z_0)^n$ converge. En caso contrario diremos que no converge a $w_0$.
 \item Converge absolutamente en un punto $w_0$ si $\sum_{n\geq 0} \abs{a_n(w_0-z_0)^n}<\infty$.
@@ -1143,7 +1150,9 @@ Dada una serie de potencias de números complejos  $\sum_{n\geq 0} a_n(z-z_0)^n$
 \end{theorem}
 
 \begin{dem}
-Sea $z\in D/z_0,r)$ entonces  $\sum_{n\geq 0} \abs{a_n(z-z_0)^n} = \sum_{n\geq 0}\abs{a_n\frac{(z-z_0)^n}{(z_1-z_0)^n}(z_1-z_0)^n}$.
+Sea $z\in D(z_0,r)$, entonces  
+
+$$\sum_{n\geq 0} \abs{a_n(z-z_0)^n} = \sum_{n\geq 0}\abs{a_n\frac{(z-z_0)^n}{(z_1-z_0)^n}(z_1-z_0)^n}.$$
 
 Dado que  $\sum_{n\geq 0} a_n(z_1-z_0)^n$ converge entonces $\lim_{n\to \infty} a_n(z_1-z_0)^n =0$ y $\exists M>0 / |a_n(z_1-z_0)^n|<M\ \forall n\in\N$.
 
@@ -1230,7 +1239,7 @@ Sea $\{f_n(z)\}_n$ una sucesión de funciones analíticas en un abierto $U$ tal 
 Veamos que $f(z)$ es continua:
 $$\text{Sea } \varepsilon >0,\ N \in \N\ / |f_n(z)-f(z)| < \varepsilon/3\ \forall n> N,\ \forall z\in U$$
 $$\text{Sea } z_0 \in U \Rightarrow \exists \delta >0\ /\ |f_N(z)-f_N(z_0)|<\varepsilon/3 \text{ si }|z-z_0|<\delta$$
-$$ \Rightarrow |f(z)-f(z_0)| \leq |f(z)-f_N(z)|+|f_N(z9-f_N(z_0)|+|f_N(z_0)-f(z_0)|<varepsilon$$
+$$ \Rightarrow |f(z)-f(z_0)| \leq |f(z)-f_N(z)|+|f_N(z9-f_N(z_0)|+|f_N(z_0)-f(z_0)|<\varepsilon$$
 Entonces $f(z)$ es continua en $z_0$. Y si tomamos $k$ un compacto de $U$ y $\Gamma$ la frontera de $\triangle$ tenemos que
 $$\int_\Gamma f(z)dz = \lim_{n\to \infty}\int_\Gamma f_n(z)dz = 0 \xRightarrow{T^a\ Morera} f(z) \text{ es analítica en } k\Rightarrow \text{ es analítica en } U.$$
 
@@ -1371,7 +1380,8 @@ $$\frac{1}{2\pi i} \int_{C_2} \frac{f(w)}{w-z}dw = \sum_{n\geq 0}(z-z_0)^n \frac
 
 Obtenemos $a_n = \frac{1}{2\pi i}\int_C \frac{f(w)}{(w-z)^{n+1}}dw$.
 
-Por el teorema de Abel $f$ converge absolutamente en $D(z_0,r_2)$ y uniformemente sobre compactos de $D$. Dado que $\abs{\frac{w-z_0}{z-z_0}}<1$ aplicamos lo mismo para $C_1$:
+Por el teorema de Abel $f$ converge absolutamente en $D(z_0,r_2)$ y uniforme- mente sobre compactos de $D$. Dado que $\abs{\frac{w-z_0}{z-z_0}}<1$ aplicamos lo mismo para $C_1$:
+
 $$-\frac{1}{2\pi i} \int_{C_1} \frac{f(w)}{w-z}dw = \sum_{n\geq 0}(z-z_0)^n \frac{1}{2\pi i} \int_{C_2} \frac{f(w)}{(w-z)^{n+1}}dw$$
 Obtenemos $b_n = -\frac{1}{2\pi i}\int_C \frac{f(w)}{(w-z)^{n+1}}dw$.
 
@@ -1388,13 +1398,17 @@ Sea $z_0$ una singularidad aislada de $f(z)$ entonces
 \end{enumerate}
 \end{prop}
 
-\begin{dem}
+\begin{dem}\ \\
 \begin{enumerate}
-\item $$z_0 \text{ es evitable } \Leftrightarrow f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^n \Leftrightarrow \lim_{z\to z_0} f(z) = lim_{z\to z_0} \sum_{n=0}^\infty a_n (z-z_0)^n = a_0$$
+\item \begin{align*}
+	z_0 \text{ es evitable } \Leftrightarrow f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^n \Leftrightarrow \lim_{z\to z_0} f(z) = \\
+	lim_{z\to z_0} \sum_{n=0}^\infty a_n (z-z_0)^n = a_0
+	\end{align*}
 
 \item \begin{align*}
-& z_0 \text{ es polo de orden } m \Leftrightarrow f(z) = \sum_{n=-m}^{-1} a_n(z-z_0)^n + \sum_{n=0}^\infty a_n (z-z_0)^n\\
-& \Leftrightarrow g(z) = f(z)(z-z_0)^m = a_{-m} + aa_{m-1}(z-z_0)+\ldots \Leftrightarrow \lim_{z\to z_0} g(z) = a_{-m}\in \C\backslash\{0\}
+&z_0 \text{ es polo de orden } m \Leftrightarrow f(z) = \sum_{n=-m}^{-1} a_n(z-z_0)^n + \sum_{n=0}^\infty a_n (z-z_0)^n\\
+&\Leftrightarrow g(z) = f(z)(z-z_0)^m = a_{-m} + aa_{m-1}(z-z_0)+\ldots \Leftrightarrow\\
+&\hspace{6.5cm} \lim_{z\to z_0} g(z) = a_{-m}\in \C\backslash\{0\}
 \end{align*}
 \end{enumerate}
 \end{dem}
@@ -1622,7 +1636,7 @@ Supongamos que $\{f_n\}$ es una sucesión de funciones analíticas es un abierto
 
 Consideremos $\overline{D(z_0,r)}\subset U$ y asumimos que $f(z)\neq 0$ para todo $z$ tal que $\abs{z-z_0}=r$, entonces
 $$
-\exists N\in\N / f_n(z) \text{ tiene el mísmo número de ceros que } f(z) \text{ en } D(z_0,r)\ \forall n\geq N
+\exists N\in\N / f_n(z) \text{ tiene el mismo número de ceros que } f(z) \text{ en } D(z_0,r)\ \forall n\geq N
 $$
 \end{theorem}
 
