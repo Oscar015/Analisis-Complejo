@@ -23,9 +23,9 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 
-\newcommand{\Log}{\emph{Log}}
-\newcommand{\Arg}{\emph{Arg}}
-\newcommand{\Res}{\emph{Res}}
+\newcommand{\Log}{\emph{Log}\hspace{0.5mm}}
+\newcommand{\Arg}{\emph{Arg}\hspace{0.5mm}}
+\newcommand{\Res}{\emph{Res}\hspace{0.5mm}}
 
 \newcommand{\f}{f: U\subset \C \longrightarrow \C}
 
@@ -54,7 +54,9 @@ Definimos la parte real de $z$ como $\Re(z) = Re(z) = a$ y la parte imaginaria d
 \end{defi}
 
 
- $\alpha = \arctan (\frac{b}{a}) \longrightarrow \text{ Argumento principal: } (-\pi,\pi)$
+ $\alpha = \arg z = \arctan(\frac{b}{a})$: El argumento de un número complejo.
+
+ $\mathbb{\Arg z}$: El argumento principal con, $\Arg z \in (-\pi,\pi]$
  
  \textbf{Forma trigonométrica}: $z = a+bi = |z|(\cos \alpha + i\sin \alpha)$
  
@@ -183,7 +185,6 @@ Si $z=1 \Rightarrow e^w = 1 \Leftrightarrow w = 2\pi k i, k \in \Z$.
 Sea $z\neq 0$, entonces el logaritmo principal o rama principal del logaritmo de $z$, denotado por $\Log$, viene definido por $\Log z = \ln(|z|) + i \Arg(z)$ donde $\Arg(z)\in (-\pi,\pi]$.Denotamos por $\log(z)$ al conjunto de elementos $w \in \C$ de forma que $e^w = z$. 
 \end{defi}
 
-
 \begin{defi}
 Sea $\theta_0 \in\R$ Definimos $\log_{\theta_0} z = \ln |z| + i\theta$ con \\$\theta \in (\theta_0,\theta_0+2\pi]$.
 
@@ -192,16 +193,15 @@ Podemos ver como $\Log z = \log_{-\pi} z$.
 
 \subsubsection*{Propiedades}
 \begin{enumerate}
-\item $\log(1) = \{2\pi ki, k\in\Z \}$
-\item $\log(-1) = \{(2k+1)\pi i, k\in\Z \}$
-\item $\log(z_1z_2) = log(z_1)+\log(z_2)$ pero no siempre se cumple que 
-
-$\Log(z_1z_2) = \Log(z_1) + \Log(Z_2)$.
-\item $\Log z$ es una función continua en $\C \backslash (-\infty,0]$
-\item  $\Log z$ es una función analítica en $\C \backslash (-\infty,0]$
-$$ \frac{d}{dz}Log z = \frac{1}{z} \ \forall z \in \C \backslash (-\infty,0]$$
-\item $e^{log_{\theta_0} z} = z \ \forall z \in \C \backslash\{0\}$
-\item $log_{\theta_0} e^z=z \ \forall z \in\{x+iy / \theta_0 \leq y \leq \theta_0 + 2\pi\}$
+	\item $w=\log z\Leftrightarrow z = e^w$
+	\item $\log(1) = \{2\pi ki, k\in\Z \}$
+	\item $\log(-1) = \{(2k+1)\pi i, k\in\Z \}$
+	\item $\log(z_1z_2) = log(z_1)+\log(z_2)$ pero no siempre se cumple que\\$\Log(z_1z_2) = \Log(z_1) + \Log(z_2)$.
+	\item $\Log z$ es una función continua en $\C \backslash (-\infty,0]$
+	\item  $\Log z$ es una función analítica en $\C \backslash (-\infty,0]$ 
+	$$ \frac{d}{dz}Log z = \frac{1}{z} \ \forall z \in \C \backslash (-\infty,0]$$
+	\item $e^{log_{\theta_0} z} = z \ \forall z \in \C \backslash\{0\}$
+	\item $log_{\theta_0} e^z=z \ \forall z \in\{x+iy /\ \theta_0 \leq y \leq \theta_0 + 2\pi\}$
 \end{enumerate}
 
 \subsection{Funciones potencia}
