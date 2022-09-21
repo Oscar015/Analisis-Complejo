@@ -1,5 +1,5 @@
-\documentclass[10pt]{book}
-
+\documentclass[12pt]{book}
+%\documentclass[10pt]{book}
 \input{estilo.sty}
 
 \setlength{\parskip}{0.5em}
@@ -131,7 +131,8 @@ Sea $k \in\R$, tomamos $h=ik$:
 
 $$
 \Rightarrow \parcial{u}{x}(x_0,y_0) + \parcial{v}{y}(x_0,y_0)i = \parcial{v}{y}(x_0,y_0) - \parcial{u}{y}(x_0,y_0)i
-$$$$
+$$
+$$
 \Rightarrow \parcial{u}{x} = \parcial{v}{y} \hspace{0.5cm} \parcial{u}{y} = -\parcial{v}{x}\ \qed
 $$
 \end{dem}
@@ -151,20 +152,24 @@ x = r\cos\theta,\ y = r\sin\theta\\
 
 \section{Algunas funciones elementales}
 \subsection{Función exponencial}
-Sea $x,y \in\R \text{ y sea } z = x+iy$
+Sea $x,y \in\R \text{ y sea } z = x+iy$ 
+
 $\Rightarrow e^{x} = \sum_{n=0}^\infty \frac{x^n}{n!}$
 \begin{multline*}
 e^{iy} = \sum{n=0}^\infty \frac{(iy)^n}{n!} = 1 + iy - \frac{y^2}{2}-\frac{y^3}{3!}i + \cdots\\
-= (1-\frac{y^2}{2} + \frac{y^4}{4!}+\cdots) +i(y-\frac{y^3}{3!}+\cdots) = \cos y + i \sin y\\
-e^x + e^{iy} = e^{x+iy} \Rightarrow e^{z} = e^x(\cos y + i \sin y)
+= (1-\frac{y^2}{2} + \frac{y^4}{4!}+\cdots) +i(y-\frac{y^3}{3!}+\cdots) = \cos y + i \sin y
 \end{multline*}
+$$
+\Rightarrow e^x + e^{iy} = e^{x+iy} = e^z$$
+$$ \Rightarrow \text{ definimos la exponencial compleja}\exp{z} \equiv e^{z} = e^x(\cos y + i \sin y)$$
 \subsubsection*{Propiedades}
 \begin{enumerate}
 \item $e^z \neq 0 \forall z \in \C$
-\item $|e^{z}| = e^{Re z}$
+\item $\abs{e^{z}} = e^{Re z} = e^x\leq e^{\abs{z}}$
 \item $\overline{e^z} = e^{\overline z}$
-\item $(e^z)^n = e^{zn}$
-\item $e^{z_1+z_2} = e^{z_1}z^{z_2}$
+\item $(e^z)^n = e^{nz}$
+\item $e^{z_1+z_2} = e^{z_1}e^{z_2}\ \forall z_1,z_2 \in\C$
+\item $e^z$ es una función entera.
 \item $ e^z = 1 \Leftrightarrow e^x e^{iy}=1 \Leftrightarrow x = 0 \wedge y = 2\pi k \Leftrightarrow z = 2\pi ki, k\in \Z$
 \item $\displaystyle \nexists \lim_{z \to 0} e^z$
 \end{enumerate}
