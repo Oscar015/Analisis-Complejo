@@ -58,9 +58,9 @@ Definimos la parte real de $z$ como $\Re(z) = Re(z) = a$ y la parte imaginaria d
 
  $\mathbb{\Arg z}$: El argumento principal con, $\Arg z \in (-\pi,\pi]$
  
- \textbf{Forma trigonométrica}: $z = a+bi = |z|(\cos \alpha + i\sin \alpha)$
+ \textbf{Forma trigonométrica}: $z = a+bi = \abs{z}(\cos \alpha + i\sin \alpha)$
  
- \textbf{Forma exponencial}: $z = a+bi = |z|e^{i\alpha}$
+ \textbf{Forma exponencial}: $z = a+bi = \abs{z}e^{i\alpha}$
 $$ 
 	Arg(z)= \left\{ \begin{array}{lcc}
 	\frac{\pi}{2} & si & a=0,b>0 \\
@@ -182,11 +182,11 @@ $e^w = z \Leftrightarrow \log z = w$ con $z \neq 0 \in \C$.
 Si $z=1 \Rightarrow e^w = 1 \Leftrightarrow w = 2\pi k i, k \in \Z$.
  
 \begin{defi}[Logaritmo principal]
-Sea $z\neq 0$, entonces el logaritmo principal o rama principal del logaritmo de $z$, denotado por $\Log$, viene definido por $\Log z = \ln(|z|) + i \Arg(z)$ donde $\Arg(z)\in (-\pi,\pi]$.Denotamos por $\log(z)$ al conjunto de elementos $w \in \C$ de forma que $e^w = z$. 
+Sea $z\neq 0$, entonces el logaritmo principal o rama principal del logaritmo de $z$, denotado por $\Log$, viene definido por $\Log z = \ln(\abs{z}) + i \Arg(z)$ donde $\Arg(z)\in (-\pi,\pi]$.Denotamos por $\log(z)$ al conjunto de elementos $w \in \C$ de forma que $e^w = z$. 
 \end{defi}
 
 \begin{defi}
-Sea $\theta_0 \in\R$ Definimos $\log_{\theta_0} z = \ln |z| + i\theta$ con \\$\theta \in (\theta_0,\theta_0+2\pi]$.
+Sea $\theta_0 \in\R$ Definimos $\log_{\theta_0} z = \ln \abs{z} + i\theta$ con \\$\theta \in (\theta_0,\theta_0+2\pi]$.
 
 Podemos ver como $\Log z = \log_{-\pi} z$.
 \end{defi}
@@ -208,7 +208,7 @@ Podemos ver como $\Log z = \log_{-\pi} z$.
 \begin{defi}
 Sea $z\neq 0$ y $\alpha \in\C$ tomaremos por definición $z^\alpha$, llamada potencia de exponente arbitrario $\alpha$, como el conjunto de todos los valores dados por:
 $$z^\alpha = e^{\alpha\log z}$$
-\textbf{Nota:} Si $alpha \in\R$ entonces $z^\alpha = |z|^\alpha e^{i\alpha\arg z}$.
+\textbf{Nota:} Si $alpha \in\R$ entonces $z^\alpha = \abs{z}^\alpha e^{i\alpha\arg z}$.
 \end{defi}
 
 
@@ -353,7 +353,7 @@ $$
 \begin{prop}
 Sea $\gamma:[a,b]\longrightarrow \C$ un camino y $f(z)$ una función continua en $\gamma^*$, entonces:
 $$\abs{\int_\gamma f(z)dz }\leq M_f(\gamma)L(\gamma)$$
-Con $M_f(\gamma) = \max \{|f(z)|,z \in \gamma^* \}$ y $L(\gamma)$ la longitud de $\gamma$.
+Con $M_f(\gamma) = \max \{\abs{f(z)},z \in \gamma^* \}$ y $L(\gamma)$ la longitud de $\gamma$.
 \end{prop}
 
 \begin{dem}
@@ -522,7 +522,7 @@ $$\bigcap_{n=1}^\infty V_n = \{z_0\}$$
 $f$ es analítica en $U$ entonces $$f'(z_0) = \lim_{z\to z_0}= \frac{f(z)-f(z_0)}{z-z_0}\Leftrightarrow $$ $$\forall \varepsilon>0\ \exists \delta>0 / \text{ si } |z-z_0|<\delta\Rightarrow \abs{\frac{f(z)-f(z_0)}{z-z_0}-f'(z_0)} <\varepsilon $$
 
 \begin{multline*}\forall z\in U, \ g(z) := f(z) -f(z_0) -(z-z_0)f'(z_0),\ \forall \varepsilon>0 \Rightarrow\\
- |g(z)|\leq \varepsilon|z-z_0 \text{ si } |z-z_0|< \delta|
+ \abs{g(z)}\leq \varepsilon|z-z_0 \text{ si } |z-z_0|< \delta|
  \end{multline*}
  \begin{align*}
  &Dado \delta>0,\ \exists n\in\N \ /\ \bar{V}_n \subset D(z_0,\delta)\\
@@ -696,9 +696,9 @@ Donde $C:= C(z_0,r) = \{z/ |z_0-z|=r\}$.
 \end{theorem}
 
 \begin{dem}
-Sea $V = D(z_0,r)$ tal que $\bar{D}(z_0,r)\subset V\subset U$ y $z\in D(z_0,r)$. Sea $t>0$ tal que $D:= D(z,t)\subset D(Z_0,r)$.
+Sea $V = D(z_0,r)$ tal que $\bar{D}(z_0,r)\subset V\subset U$ y $z\in D(z_0,r)$. Sea $t>0$ tal que $D:= D(z,t)\subset D(z_0,r)$.
 
-(dibujo)
+%(dibujo)
 
 $C_1 \subset V_1$ estrellado entonces tenemos que $g(w) = \frac{f(w)}{w-z},\ w\in V_!$ es analítica, por lo que
 
@@ -769,7 +769,7 @@ $$
 Si $z$ es exterior a $C$ entonces $f(w) = \frac{1}{w-z}$ es analítica en $D(z_0,s)$ con $s>r$ de forma que $z\notin D(z_0,s)$. Entonces por el Teorema de Cauchy para convexos $\int_C \frac{1}{w-z}dw = 0$.
 
 Si $z$ es interior a $C$, $f(w)=1$ y por F.I.C entonces 
-$$\frac{1}{2\pi i}\int_C \frac{1)}{w-z}dw = f(z) = 1 \Rightarrow \int_C \frac{1)}{w-z}dw = 2\pi i$$
+$$\frac{1}{2\pi i}\int_C \frac{1}{w-z}dw = f(z) = 1 \Rightarrow \int_C \frac{1}{w-z}dw = 2\pi i$$
 \end{dem}
 
 
@@ -813,7 +813,7 @@ Sea $U$ abierto de $\C$ son equivalentes:
 \begin{enumerate}
 \item $\overline{\C}\backslash U$ es conexo.
 \item $n(\gamma,z)=0 \ \forall \gamma$ camino cerrado en $U$ y $\forall z \in \C\backslash U$.
-\item $int_\gamma f(z)dz = 0 \ \forall f$ analítica en $U$ y $\forall \gamma$ camino cerrado en $U$.
+\item $\int_\gamma f(z)dz = 0 \ \forall f$ analítica en $U$ y $\forall \gamma$ camino cerrado en $U$.
 \item Si $f$ es analítica entonces tiene primitiva.
 \end{enumerate}
 \end{theorem}
@@ -822,7 +822,7 @@ Sea $U$ abierto de $\C$ son equivalentes:
 \begin{theorem}[Fórmula integral de Cauchy general]
 Sea $f$ analítica en un abierto $U\in\C$ y $\gamma$ un camino cerrado en $U$ tal que $n(\gamma,z)=0$ $\forall z \notin U$ entonces para $z \in U$, $z \notin\gamma^*$ se cumple que:
 $$f(z)n(\gamma,z) = \frac{1}{2\pi i}\int_\gamma \frac{f(w)}{z-z_0}dw$$
-$$f^{(n)}(z)n(\gamma,z) = \frac{n!}{2\pi i}\int_\gamma \frac{f(w)}{(z-z_0)^{+1}}dw$$
+$$f^{(n)}(z)n(\gamma,z) = \frac{n!}{2\pi i}\int_\gamma \frac{f(w)}{(z-z_0)^{n+1}}dw$$
 \end{theorem}
 
 \begin{defi}
@@ -899,7 +899,7 @@ Si $f(z)$ es una función entera y está acotada entonces es constante.
 \end{theorem}
 
 \begin{dem}
-Si $f(z)$ es acotada entonces $\exists M>0 / |f(z)|<M \ \forall z\in \C$. Por la estimación de Cauchy para $n=1$:
+Si $f(z)$ es acotada entonces $\exists M>0 / \abs{f(z)}<M \ \forall z\in \C$. Por la estimación de Cauchy para $n=1$:
 $$|f'(z)| \leq \frac{M_f(r)}{r}\leq \frac{M}{r} \xrightarrow[r\to \infty]{} 0 \ \forall r>0$$ Entonces $f'(z)=0 \ \forall z\in\C$ como $\C$ es conexo entonces $f$ es constante. $\qed$
 \end{dem}
 
@@ -912,7 +912,8 @@ Todo polinomio $P(z)$ no constante tiene al menos una raíz, es decir, existe al
 \begin{dem}
 Sea $P(z) = a_0 + a_1z + \cdots + a_n z^n, n>1$ Por R.abs., si $P(z)$ no tuviera raíces entonces $f(z) = \frac{1}{P(z)}$ es entera. Veamos que $f$ está acotada:
 
-Sabemos que $\displaystyle |P(z)|\xrightarrow[|z|\to 0]{} 0 \Rightarrow \exists R>0 / |P(z)|>1 \text{ si } |z| >R \Rightarrow |f(z)| = \frac{1}{|P(z)|} <1$ si $|z|\leq R$. En consecuencia $f(z)$ es acotada en $\C$ y por el Teorema de Liouville $f(z) = cte.\ \sharp$
+Sabemos que $\displaystyle \abs{P(z)}\xrightarrow[\abs{z}\to 0]{} 0 \Rightarrow \exists R>0 / \abs{P(z)}>1 \text{ si } \abs{z} >R \Rightarrow \abs{f(z)} = \frac{1}{\abs{P(z)}} <1$ si $\abs{z}\leq R$. 
+En consecuencia $f(z)$ es acotada en $\C$ y por el Teorema de Liouville $f(z) = cte.\ \sharp$
 \end{dem}
 
 \begin{col}[Teorema fundamental del álgebra]
@@ -954,11 +955,11 @@ Si $P'(z_0) = 0$  y $P(z_0)= 0$ entonces $z_0 = 1\cdot z_0 + 0\cdot\sum a_j \Rig
 
 \begin{lema}[Propiedad del valor medio de Gauss]
 Sea $f(z)$ analítica en $U\supset \bar{D(z_0,r)}$, $z_0\in\C$ y $r>0$ entonces
-$$f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0+re^{it}dt$$
+$$f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0+re^{it})dt$$
 \end{lema}
 
 \begin{dem}
-$$f(z_0) = \frac{1}{2\pi i} \int_{C(z_0,r} \frac{f(w)}{w-z}dw,\ \gamma(t) = z_0+re^{it},\ \gamma'(t) = rie^{it}$$
+$$f(z_0) = \frac{1}{2\pi i} \int_{C(z_0,r)} \frac{f(w)}{w-z}dw,\ \gamma(t) = z_0+re^{it},\ \gamma'(t) = rie^{it}$$
 
 $$
 f(z_0) = \frac{1}{2\pi\cancel{i}}\int_0^{2\pi} \frac{f(z_0+re^{it})}{\cancel{r{e^{it}}}}\cancel{ri{e^{it}}}dt = \frac{1}{2\pi} \int_0^{2\pi} f(z_0+re^{it})dt
@@ -966,58 +967,58 @@ $$$\qed$
 \end{dem}
 
 \begin{theorem}[Principio del módulo máximo local]
-Si $f(z)$ es analítica en un abierto $U$ y supongamos que $|f(z)|$ tiene máximo en $z_0\in U$. Entonces $f(z)$ es constante en un entorno de $z_0$.
+Si $f(z)$ es analítica en un abierto $U$ y supongamos que $\abs{f(z)}$ tiene máximo en $z_0\in U$. Entonces $f(z)$ es constante en un entorno de $z_0$.
 \end{theorem}
 
 \begin{dem}
-Por hipótesis sabemos que $\exists D(z_0,r),\ r>0$ tal que $|f(z)| \leq |f(z_0)|\ \forall z \in D(z_0,r)$ Entonces se cumple que
+Por hipótesis sabemos que $\exists D(z_0,r),\ r>0$ tal que $\abs{f(z)} \leq \abs{f(z_0)}\ \forall z \in D(z_0,r)$ Entonces se cumple que
 $$
-|f(z_0)| = \frac{1}{2\pi}\abs{\int_0^{2\pi}f(z_0+re^{it}dt} \leq \frac{1}{2\pi}\max\{|f(z_0+re^{it}/t\in [0,2\pi]\}\leq |f(z_0|
-$$
-$$
-\Rightarrow |f(z_0)| = \frac{1}{2\pi}\int_0^{2\pi}|f(z_0+re^{it}|dt \Rightarrow \int_0^{2\pi} |f(z_0)|-|f(z_0+re^{it})|dt = 0
+\abs{f(z_0)} = \frac{1}{2\pi}\abs{\int_0^{2\pi}f(z_0+re^{it})dt} \leq \frac{1}{2\pi}\max\{|f(z_0+re^{it})/t\in [0,2\pi]\}\leq \abs{f(z_0)}
 $$
 $$
-\Rightarrow |f(z_0) = |f(f(z_0+re^{it})|\ \forall t\in[0,2\pi]\Rightarrow |f(z_0)|= cte. \text{ en un entorno de } z_0.
+\Rightarrow \abs{f(z_0)} = \frac{1}{2\pi}\int_0^{2\pi}\abs{f(z_0+re^{it})}dt \Rightarrow \int_0^{2\pi} \abs{f(z-0)}-\abs{f(z_0+re^{it})}dt = 0
+$$
+$$
+\Rightarrow \abs{f(z_0)} = \abs{f(z_0+re^{it})}\ \forall t\in[0,2\pi]\Rightarrow \abs{f(z_0)}= cte. \text{ en un entorno de } z_0.
 $$$\qed$
 \end{dem}
 
 \begin{col}
-Sea $f(z_0)$ analítica en un abierto y conexo $U$, supongamos que $|f(z_0)|$ alcanza el máximo absoluto en $U$, entonces $f(z_0)$ tiene valor constante en $U$.
+Sea $f(z_0)$ analítica en un abierto y conexo $U$, supongamos que $\abs{f(z_0)}$ alcanza el máximo absoluto en $U$, entonces $f(z_0)$ tiene valor constante en $U$.
 \end{col}
 \begin{dem}
-Por hipótesis $\exists z_0 \in U / |f(z)|\leq |f(z_0)| \ \forall z \in U$.
+Por hipótesis $\exists z_0 \in U / \abs{f(z)}\leq \abs{f(z_0)} \ \forall z \in U$.
 
 Sea $E = \{z\in U / f(z) = f(z_0)\}$ al ser $f(z)$ continua en $U$ claramente el conjunto $E$ es cerrado respecto de $U$  y $z_0\in E \Rightarrow E \neq \emptyset$ .
 
-Sea $z\in E \Rightarrow |f(z)| = |f(z_0)| = \max\{|f(z)|\}$ entonces por el resultado anterior $f$ es constante en un entorno de $z$. Con lo que $\exists\  r>0 $tal que $D(z,r)\subset E \Rightarrow E$ es abierto y entonces $E=U$. $\qed$
+Sea $z\in E \Rightarrow \abs{f(z)} = \abs{f(z_0)} = \max\{\abs{f(z)}\}$ entonces por el resultado anterior $f$ es constante en un entorno de $z$. Con lo que $\exists\  r>0$ tal que $D(z,r)\subset E \Rightarrow E$ es abierto y entonces $E=U$. $\qed$
 \end{dem}
 
 \begin{theorem}[Principio del módulo máximo]
 Sea $f(z)$ analítica en un conjunto abierto, conexo y acotado $U$ y continua en $Fr(U)$. 
 
-Si $M =\max \{|f(z)|/ z\in Fr(U)\}$, se cumple que:
+Si $M =\max \{\abs{f(z)}/ z\in Fr(U)\}$, se cumple que:
 
 \begin{enumerate}
-\item $|f(z)|\leq M \ \forall z \in U$
-\item Si $|f(z)| = M$ para $z_0 \in U$ entonces $f(Z) = cte.$ en $U$.
+\item $\abs{f(z)}\leq M \ \forall z \in U$
+\item Si $\abs{f(z)} = M$ para $z_0 \in U$ entonces $f(z) = cte.$ en $U$.
 \end{enumerate}
 \end{theorem}
 
 \begin{dem}\ \\
 \begin{enumerate}
-\item Observamos que $|f(z)|$ es también continua en $\bar{U}$ por lo que $|f(z)|$ alcanza un máximo en $\bar{U}$. Si tal máximo se alcanza en $Fr(U)$ hemos terminado.
-Si el máximo se alcanza en  $Int(U)$ entonces $\exists z_0 \in U$ tal que $|f(z)|\leq |f(z_0)| \ \forall z\in U$ entonces $f$ es constante en $U$.
-\item Si $\exists z_0 \in U$ tal que $|f(z_0)| = M$ entonces $f(z_0)$ es constante.$\qed$
+\item Observamos que $\abs{f(z)}$ es también continua en $\bar{U}$ por lo que $\abs{f(z)}$ alcanza un máximo en $\bar{U}$. Si tal máximo se alcanza en $Fr(U)$ hemos terminado.
+Si el máximo se alcanza en  $Int(U)$ entonces $\exists z_0 \in U$ tal que $\abs{f(z)}\leq \abs{f(z_0)} \ \forall z\in U$ entonces $f$ es constante en $U$.
+\item Si $\exists z_0 \in U$ tal que $\abs{f(z_0)} = M$ entonces $f(z_0)$ es constante.$\qed$
 \end{enumerate}
 \end{dem}
 
 
 \begin{theorem}[Principio del módulo mínimo]
-Sea $f(z)$ analítica en un conjunto abierto, conexo y acotado $U$ y continua en $Fr(U)$.Supongamos $f(z)\neq 0\ \forall z\in U$. Si $m =\min \{|f(z)|/ z\in Fr(U)\}$, se cumple que:
+Sea $f(z)$ analítica en un conjunto abierto, conexo y acotado $U$ y continua en $Fr(U)$.Supongamos $f(z)\neq 0\ \forall z\in U$. Si $m =\min \{\abs{f(z)}/ z\in Fr(U)\}$, se cumple que:
 \begin{enumerate}
-\item $|f(z)|\geq n \ \forall z \in U$
-\item Si $|f(z)| = n$ para $z_0 \in U$ entonces $f(Z) = cte.$ en $U$.
+\item $\abs{f(z)}\geq n \ \forall z \in U$
+\item Si $\abs{f(z)} = n$ para $z_0 \in U$ entonces $f(z) = cte.$ en $U$.
 \end{enumerate}
 \end{theorem}
 
@@ -1030,15 +1031,15 @@ Sea $f(z)$ analítica no constante en un abierto conexo y acotado $U$ y continua
 \end{col}
 
 \begin{dem}
-Sea $g(z)= e^{f(z)}$ analítica en $U$ y continua en la frontera. $|g(z)| = |e^{f(z)}| = |e^{\Re(f(z)}||e^{\Im{f(z)}i}| = |e^u||e^{iv}| = e^u$ como $g$ satisface el principio del módulo máximo (mínimo) $u$ también los cumple.
+Sea $g(z)= e^{f(z)}$ analítica en $U$ y continua en la frontera. $\abs{g(z)} = \abs{e^{f(z)}} = \abs{e^{\Re(f(z))}}\cdot \abs{e^{\Im{f(z)}i}} = \abs{e^u}\cdot\abs{e^{iv}} = e^u$ como $g$ satisface el principio del módulo máximo (mínimo) $u$ también los cumple.
 
 Sea  $ h(z) = e^{-if(z)}$ entonces $|h(z)| = e^v$ y como $h$ satisface el principio del módulo máximo (mínimo) $v$ también los cumple.$\qed$
 \end{dem}
 
 \begin{lema}[Lema de Schwarz]
-Sea $f(z)$ una función analítica en $D(0,1)$. Supongamos que $f(0)=0$ y $|f(z)|\leq 1\ \forall z \in D(0,1)$ entonces $|f(z)| \leq |z|$ y $|f'(0)| \leq 1$.
+Sea $f(z)$ una función analítica en $D(0,1)$. Supongamos que $f(0)=0$ y $\abs{f(z)}\leq 1\ \forall z \in D(0,1)$ entonces $\abs{f(z)} \leq \abs{z}$ y $|f'(0)| \leq 1$.
 
-Además si $\exists z_0 \in D(0,1)\backslash \{0\}$ tal que $|f(z_0)| = |z_0|$ o que $|f'(z_0)| = 1$ entonces $f(z) = az$  $\forall z\in D(0,1)$ , $as \in \C/ |a|=1$.
+Además si $\exists z_0 \in D(0,1)\backslash \{0\}$ tal que $\abs{f(z_0)} = \abs{z_0}$ o que $|f'(z_0)| = 1$ entonces $f(z) = az$  $\forall z\in D(0,1)$ , $as \in \C/ \abs{a}=1$.
 \end{lema}
 
 \begin{dem}
@@ -1054,7 +1055,7 @@ El límite existe por analiticidad de $f$.
 
 De hecho es claro que $g$ es continua en $z=0$ y por tanto $g$ es analítica en $D(0,)$.
 
-Por el P.M.Máximo $|g(z) |\leq M = \max\{|g(z)|/ z\in FR(U)\}$, $|g(z)| = \frac{|f(z)|}{z}\leq 1 \Rightarrow |f(z)| \leq z \ \forall z\in D(0,1)$.
+Por el P.M.Máximo $\abs{g(z)}\leq M = \max\{\abs{g(z)}/ z\in FR(U)\}$, $\abs{g(z)} = \frac{\abs{f(z)}}{z}\leq 1 \Rightarrow \abs{f(z)} \leq z \ \forall z\in D(0,1)$.
 
 La segunda parte de la afirmación se cumple por el apartado del P.M.-mínimo.
 \end{dem}
@@ -1074,16 +1075,16 @@ $$Q_z(t) = \frac{Re^{it}+z}{Re^{it}-z} \text{ siendo } z\in D(0,R), t\in\R$$
 
 \begin{theorem}[Fórmula integral de Poisson]
 Sea $f(z)$ analítica en $D(z_0,R)$ y continua en $\overline{D(z_0,R)}$, para $z_0\in\C,\ R>0,\ z= z_0+e^{it}\in D(z_0,R)$, $0\leq r<R$ se tiene que:
-$$f(z) = \frac{1}{2\pi}\int_0^{2\pi} P_r/\theta-t)f(z_0+Re^{it})dt$$
+$$f(z) = \frac{1}{2\pi}\int_0^{2\pi} P_r()\theta-t)f(z_0+Re^{it})dt$$
 
-Si $u = \Re(f)$ entonces $$u(z) = \frac{1}{2\pi}\int_0^{2\pi} P_r/\theta-t)u(z_0+Re^{it})dt$$
+Si $u = \Re(f)$ entonces $$u(z) = \frac{1}{2\pi}\int_0^{2\pi} P_r(\theta-t)u(z_0+Re^{it})dt$$
 \end{theorem}
 
 
 \chapter{Series de potencias}
 \section{Convergencia de Series}
 \begin{defi}
-Una sucesión de números complejos $\{z_n\}_{n>=1}$ es convergente a $z\in\C$ si $\forall\varepsilon>0 \ \exists n_0\in\N / |z_n-z|<\varepsilon\ \text{ si } n>n_0$.
+Una sucesión de números complejos $\{z_n\}_{n\geq 1}$ es convergente a $z\in\C$ si $\forall\varepsilon>0 \ \exists n_0\in\N / \abs{z_n-z}<\varepsilon\ \text{ si } n>n_0$.
 \end{defi}
 
 \begin{defi}
@@ -1091,7 +1092,7 @@ Dada una serie de números complejos $\sum_{n\geq 1} z_n$ diremos que:
 
 $a)$ Converge a $z$ si $\forall \varepsilon>0\ \exists n_0\in\N / \abs{\sum_{n=1}^mz_n-z} <\varepsilon$ cuando $m> n_0$.
 
-$b)$ Converge absolutamente si $\sum_{n\geq 1} |z_n| < \infty$.
+$b)$ Converge absolutamente si $\sum_{n\geq 1} \abs{z_n} < \infty$.
 \end{defi}
 \textbf{Observación:}
 \begin{enumerate}
@@ -1159,14 +1160,14 @@ Dado que  $\sum_{n\geq 0} a_n(z_1-z_0)^n$ converge entonces $\lim_{n\to \infty} 
 
 $\Rightarrow \sum_{n\geq 0} \abs{a_n(z_1-z_0)^n} \leq M\sum_{n\geq 0} \abs{\frac{z-z_0}{z_1-z_0}}^n$ que converge por ser serie geométrica de razón menor que 1.
 
-Tomemos ahora $k\subset D(z_0,r)$ un conjunto compacto, y sea $z' \in D(z_0,r)$ talque $k\subset \bar{D}(z_0,r')\subset D(z_0,r)$ con $r' = |z'-z_0|$.
+Tomemos ahora $k\subset D(z_0,r)$ un conjunto compacto, y sea $z' \in D(z_0,r)$ tal que $k\subset \bar{D}(z_0,r')\subset D(z_0,r)$ con $r' = \abs{z'-z_0}$.
 Así si $z\in k$ tenemos que $\sum_{n\geq 0} |a_n(z-z_0)^n| <\infty \Rightarrow \sum_{n\geq 0} a_n(z-z_0)^n < \infty\ \forall z \in K$.
 
 Sea ahora $N_1 \in \N$ y $w \in k$ entonces:
 \begin{align*}
 &\abs{ \sum_{j=0}^{N_1-1} a_j(w-z_o)^j - \sum_{j\geq 0}a_j(w-z_0)^j } = \abs{ \sum_{j\geq N_1}a_j(w-z_0)^j  } =\\
-&=\lim_{N_2 to \infty} \abs{ \sum_{j = N_1}^{N_2}a_j(w-z_0)^j  } \leq \lim_{N_2\to \infty} \sum_{j=N_1}^{N_2}|a_j||w-z_0|^j \leq\\
-&\leq lim_{N_2 \to infty} \sum_{j=N_1}^{N_2}|a_j||z'-z_0|^j \leq \sum_{n\geq 0}|a_n||z'-z_0|^n < \infty
+&=\lim_{N_2 \to \infty} \abs{ \sum_{j = N_1}^{N_2}a_j(w-z_0)^j  } \leq \lim_{N_2\to \infty} \sum_{j=N_1}^{N_2}|a_j||w-z_0|^j \leq\\
+&\leq lim_{N_2 \to \infty} \sum_{j=N_1}^{N_2}|a_j|\abs{z'-z_0}^j \leq \sum_{n\geq 0}|a_n|\abs{z'-z_0}^n < \infty
 \end{align*}
 Los restos de la serie cumplen la definición de convergencia uniforme.$\qed$
 \end{dem}
@@ -1190,12 +1191,12 @@ Por criterio de la raíz hay convergencia absoluta con $z\in D$.
 
 \item La convergencia uniforme en todo compacto de $D$ se deduce por el teorema de Abel.
 
-\item Por reducción al absurdo, tomemos que la serie converge para algún $z' / |z'-z_0|>r$.
+\item Por reducción al absurdo, tomemos que la serie converge para algún $z' / \abs{z'-z_0}>r$.
 
-Por el teorema de Abel la serie también convergería en $z\in D(z_0,r')$ con $r? = |z'-z_0|$.
+Por el teorema de Abel la serie también convergería en $z\in D(z_0,r')$ con $r = \abs{z'-z_0}$.
 
-En particular converge $\forall z / |z-z_0 <r'$, es decir, también converge en $z/ r<|z-z_0|z|'-z_0|$ lo que supone una contradicción ya que 
-$$\limsup|a_n(z-z_0)^n|^{\frac{1}{n}} = \frac{z-z_0|}{r}>1\ \sharp$$
+En particular converge $\forall z / \abs{z-z_0} <r'$, es decir, también converge en $z/ r<\abs{z-z_0\abs{z}'-z_0}$ lo que supone una contradicción ya que 
+$$\limsup\abs{a_n(z-z_0)^n}^{\frac{1}{n}} = \frac{\abs{z-z_0}}{r}>1\ \sharp$$
 \end{enumerate}
 \end{dem}
 
@@ -1203,8 +1204,8 @@ $$\limsup|a_n(z-z_0)^n|^{\frac{1}{n}} = \frac{z-z_0|}{r}>1\ \sharp$$
 \section{Teorema de Taylor y de la convergencia analítica}
 
 
-\begin{theorem}[Taylor]
-Sea $f(z)$ analítica en $D(z_0,r)$ para $z_0\in\C$ t $r>0$ entonces para todo $z \in D(z_0,r)$, $f(Z)$ admite la representación en serie:
+\begin{theorem}[Teorema de Taylor]
+Sea $f(z)$ analítica en $D(z_0,r)$ para $z_0\in\C$ t $r>0$ entonces para todo $z \in D(z_0,r)$, $f(z)$ admite la representación en serie:
 $$f(z) = \sum_{n\geq 0} \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n$$
 \end{theorem}
 
@@ -1273,7 +1274,8 @@ Es claro que el radio de convergencia de la serie es mayor o igual que $r$, ento
 Sea $f(z)  = \sum_{n\geq 0} a_n(z-z_0)^n$ una función definida en $D(z_0,r)$ para algún $z_0\in \C$ y $r>0$, entonces
 \begin{enumerate}
 \item $a_n = \frac{f^{(n)}(z_0)}{n!}$
-\item $f(z)$ es indefinidamente derivable en  $D(z_0,r)$ y $f^{(p)}(z) = \sum_{n\geq 0}a_nn(n-1)\ldots (n-p+1)(z-z_0)^{n-p},\ p\in \N$.
+\item $f(z)$ es indefinidamente derivable en  $D(z_0,r)$ y \\
+$f^{(p)}(z) = \sum_{n\geq 0}a_n\ n(n-1)\ldots (n-p+1)\cdot(z-z_0)^{n-p},\ p\in \N$.
 \end{enumerate}
 \end{theorem}
 
@@ -1290,11 +1292,11 @@ f^{(p)}(z_0) = \sum_{n\geq 0}a_nn(n-1)\ldots (n-p+1)(z_0-z_0)^{n-p}\\
 \section{Principio de prolongación analítica}
 
 \begin{defi}
-Sea $f(z)$ una función definida en $U$ entonces el conjunto de ceros de $f(z)$ se denota como $Z(f) = \{z\in U / f(Z) = 0\}$.
+Sea $f(z)$ una función definida en $U$ entonces el conjunto de ceros de $f(z)$ se denota como $Z(f) = \{z\in U / f(z) = 0\}$.
 
 Si $f(z)$ es analítica en $z_0$, diremos que $f(z)$ tiene un cero de orden $m\geq 1$ si $f(z) = \sum_{n\geq0} a_n(z-z_0)^n$ con $a_1 = a_2 = \cdots=a_{m-1} = 0$ y $a_m \neq 0$.
 
-También de forma equivalente $f(z)$ tiene un cero en $z_0$ de orden $m\geq 1$ cuando $f(Z) = (z-z_0)^m g(z)$ con $g(z)$ analítica en $z_0$ y $g(z_0)\neq 0$.
+También de forma equivalente $f(z)$ tiene un cero en $z_0$ de orden $m\geq 1$ cuando $f(z) = (z-z_0)^m g(z)$ con $g(z)$ analítica en $z_0$ y $g(z_0)\neq 0$.
 \end{defi}
 
 \begin{lema}
@@ -1310,7 +1312,7 @@ Veamos que $A$ es cerrado. Consideramos $\{w_n\}\subset A$ tal que $\{w_n\}_n\to
 
 Veamos que $A$ es abierto, viendo que todo punto de $A$ es interior. Sea $z_0\in A$ y consideramos $f(z) = \sum_n a_n (z-z_0)^n$ válido para $D(z_0,r)$,$r>0$ entonces $Dz_0,r)\subset U$.
 
-Como $z_0 \in A \Rightarrow z_0\in Z(f),\ f(z_0) = 0$ y supongamos que $a_0 = a_1 = \cdots=a_{m-1} = 0$ y $ a_m\neq 0$, si $f(Z) = (z-z_0)^m g(z)$ con $g$ analítica y $g(z_0)\neq 0$.
+Como $z_0 \in A \Rightarrow z_0\in Z(f),\ f(z_0) = 0$ y supongamos que $a_0 = a_1 = \cdots=a_{m-1} = 0$ y $ a_m\neq 0$, si $f(z) = (z-z_0)^m g(z)$ con $g$ analítica y $g(z_0)\neq 0$.
 
 Entonces $z_0$ no es un punto aislado de $Z(f)$. $\sharp$
 
@@ -1343,7 +1345,7 @@ Y por el teorema anterior $h(z)= \ \forall z\in U$, es decir, $f(z) = g(z) \ \fo
 
 \section{Series de Laurent}
 \begin{defi}
-DEcimos que $f(z)$ tiene una singularidad en $z_0$ si $f(z)$ no es analítica en $z_0$ pero sí loes en algún punto de todo entorno de $z_0$.
+DEcimos que $f(z)$ tiene una singularidad en $z_0$ si $f(z)$ no es analítica en $z_0$ pero sí lo es en algún punto de todo entorno de $z_0$.
 
 Esta singularidad se dice que es aislada si existe un entorno perforado de $z_0$ donde $f(z)$ es analítica. En caso contrario diremos que $z_0$ es una singularidad no aislada.
 \end{defi}
@@ -1366,9 +1368,9 @@ Y para cualquier $z_0$ en la corona se tiene que $n(\gamma,z_0) = n(C_2,z_0) - n
 
 
 \begin{theorem}[Teorema de Laurent]
-Sea $f(z)$ analítica en la corona $U = \{z\in\C / S_1 \leq |z-z_0|\leq S_2\}$ con $0\leq S1\leq S2\leq \infty$ y algún $z_0 \in \C$. Para todo $z\in U$ se tiene que:
-$$f(z) = \sum_{n=-\infty}^{infty} an(z-z_0)^n,\ a_n = \frac{1}{2\pi i}\int_C \frac{f(w)}{(w-z)^{n+1}}dw$$
-Con $C = (C(z_0,r)$ y $S_1 < r< S2$.
+Sea $f(z)$ analítica en la corona $U = \{z\in\C / S_1 \leq |z-z_0|\leq S_2\}$ con $0\leq S_1\leq S_2\leq \infty$ y algún $z_0 \in \C$. Para todo $z\in U$ se tiene que:
+$$f(z) = \sum_{n=-\infty}^{\infty} an(z-z_0)^n,\ a_n = \frac{1}{2\pi i}\int_C \frac{f(w)}{(w-z)^{n+1}}dw$$
+Con $C = (C(z_0,r)$ y $S_1 < r< S_2$.
 \end{theorem}
 
 \begin{dem}
@@ -1408,7 +1410,7 @@ Sea $z_0$ una singularidad aislada de $f(z)$ entonces
 
 \item \begin{align*}
 &z_0 \text{ es polo de orden } m \Leftrightarrow f(z) = \sum_{n=-m}^{-1} a_n(z-z_0)^n + \sum_{n=0}^\infty a_n (z-z_0)^n\\
-&\Leftrightarrow g(z) = f(z)(z-z_0)^m = a_{-m} + aa_{m-1}(z-z_0)+\ldots \Leftrightarrow\\
+&\Leftrightarrow g(z) = f(z)(z-z_0)^m = a_{-m} + a_{m-1}(z-z_0)+\ldots \Leftrightarrow\\
 &\hspace{6.5cm} \lim_{z\to z_0} g(z) = a_{-m}\in \C\backslash\{0\}
 \end{align*}
 \end{enumerate}
@@ -1422,7 +1424,7 @@ Serie de Laurent centrada en $z_0$.
 \begin{defi}
 Sea $z_0$ una singularidad de la función $f(z)$ y $\sum_{n= -\infty}^{\infty} a_n (z-z_0)^n$ su serie de Laurent centrada en $z_0$:
 \begin{enumerate}
-\item $f(z)$ tiene una singularidad evitable en $z_0$ si $aN=0\ \forall n<0$.
+\item $f(z)$ tiene una singularidad evitable en $z_0$ si $a_n=0\ \forall n<0$.
 \item $f(z)$ tiene un polo de orden $m$ en $z_0$ si $m$ es el mayor natural de forma que $a_{-m}\neq 0$.
 \item $f(z)$ tiene una singularidad esencial si existen infinitos $a_{-m}\neq 0$. 
 \end{enumerate}
@@ -1469,21 +1471,21 @@ Sea $z_0$ una singularidad aislada de $f(z)$ entonces:
 \begin{enumerate}
 \item $z_0$ es evitable $\displaystyle \Leftrightarrow \lim_{z\to z_0} f(z) \in\C$.
 \item $z_0$ es polo de orden $\displaystyle m \Leftrightarrow \lim_{z\to z_0} f(z)(z-z_0)^m \in\C\backslash\{z_0\}$.
-\item $z_0$ es esencial $\displaystyle \Leftrightarrow \not \exists \lim_{z\to z_0} |f(z)|$.
+\item $z_0$ es esencial $\displaystyle \Leftrightarrow \not \exists \lim_{z\to z_0} \abs{f(z)}$.
 \end{enumerate}
 \end{prop}
 
 \begin{dem}
 Con anterioridad hemos demostrado 1 y la implicación hacia la derecha de 2,demostremos ahora la implicación hacia la izquierda:
 
-2.$(\Leftarrow)$ Si $\lim_{z\to z_0}|f(z)|= \infty \Rightarrow f(z)$ po está acotada en un entorno perforado de $z_0$, entonces es polo o singularidad esencial y por el Teorema de Casorati-Weierstrass $z_0$ no es singularidad esencial $\Rightarrow$ es polo.
+2.$(\Leftarrow)$ Si $\lim_{z\to z_0}\abs{f(z)}= \infty \Rightarrow f(z)$ po está acotada en un entorno perforado de $z_0$, entonces es polo o singularidad esencial y por el Teorema de Casorati-Weierstrass $z_0$ no es singularidad esencial $\Rightarrow$ es polo.
 
 Dado que una singularidad solo puede ser evitable, polo o esencial, demostrados 1. y 2. podemos demostrar 3. por descarte. $\qed$
 
 \end{dem}
 
 \begin{defi}
-Diremos que $f(z)$ tiene una singularidad en $\infty$ si $f(z)$ es analítica en $\{z\in\C / |z|>r\}$ para algún $r>0$.
+Diremos que $f(z)$ tiene una singularidad en $\infty$ si $f(z)$ es analítica en $\{z\in\C / \abs{z}>r\}$ para algún $r>0$.
 El tipo de singularidad de $f(z)$ en $\infty$ se define como el tipo de singularidad de $g(z) = f\left(\frac{1}{z}\right)$ en $z=0$.
 \end{defi}
 
@@ -1501,9 +1503,9 @@ Sea $f(z)$ una función entera entonces:
 
 $(\Rightarrow)$ Si $\infty$ es evitable en $f(z)$ entonces $z=0$ lo es de $g(z) = f\left(\frac{1}{z}\right)$ por lo que $g(z)$ es acotada en un entorno perforado de $z=0 \Rightarrow f(z)$ es acotada en $\C$ y por el teorema de Liouville $f$ es constante.
 
-2. $\infty$ es un polo de $f\Leftrightarrow z=0$ es polo de $g(z) = f\left(\frac{1}{z}\right)$ entonces $\lim_{z\to 0}|g(z)| = \infty$. Además
+2. $\infty$ es un polo de $f\Leftrightarrow z=0$ es polo de $g(z) = f\left(\frac{1}{z}\right)$ entonces $\lim_{z\to 0}\abs{g(z)} = \infty$. Además
 
-$g(z) = f\left(\frac{1}{z}\right) = \sum_{n\geq 0} a_n \frac{1}{z^n}\Leftrightarrow 0$ es polo de $g \Leftrightarrow a_n=0\ \forall n\geq m,\ m\in\N\Leftrightarrow f(Z) = a_0 + a_1z + \cdots + a_mz^m$.
+$g(z) = f\left(\frac{1}{z}\right) = \sum_{n\geq 0} a_n \frac{1}{z^n}\Leftrightarrow 0$ es polo de $g \Leftrightarrow a_n=0\ \forall n\geq m,\ m\in\N\Leftrightarrow f(z) = a_0 + a_1z + \cdots + a_mz^m$.
 
  Por lo que $f(z)$ es un polinomio, no constante (por 1).
 
@@ -1558,11 +1560,11 @@ Sea $f(z)$ analítica en un abierto $U$ excepto, a lo sumo, en $w_1,\ldots,w_n$ 
 $$\int_\gamma f(z)dz = 2\pi i \sum_{j\geq 1} n(\gamma,w_j) \Res(f,w_j)$$
 \end{theorem}
 
-\begin{dem}[por hacer]
-\end{dem}
+%\begin{dem}[por hacer]
+%\end{dem}
 
 \begin{lema}[Lema de Jordan]
-Sea $f$ analítica en el semicírculo $\Gamma_R = \{z/ Re^{i\theta},0\leq \theta\leq \pi\}$ y sea $M(R) = \max\{|f(z)|/ z\in \Gamma_R\}$. Si $a>0 \Rightarrow$
+Sea $f$ analítica en el semicírculo $\Gamma_R = \{z/ Re^{i\theta},0\leq \theta\leq \pi\}$ y sea $M(R) = \max\{\abs{f(z)}/ z\in \Gamma_R\}$. Si $a>0 \Rightarrow$
 $$\abs{\int_\Gamma f(z)e^{iaz}dz} \leq \frac{\pi M(R)}{a}(1-e^{-aR})$$
 \end{lema}
 
@@ -1583,7 +1585,7 @@ Entonces $g(\theta) \geq 0\ \forall \theta \in[0,\pi/2] \Leftrightarrow \sin\the
 \end{dem}
 
 \begin{prop}
-Sea $f(z)$ una función analítica en $\{z/|z|>r,\Im(z)\geq 0\}\forall r>0$ y consideremos el arco semicircular de centro $0$ y radio $R$ positivamente orientado dado por
+Sea $f(z)$ una función analítica en $\{z/\abs{z}>r,\Im(z)\geq 0\}\forall r>0$ y consideremos el arco semicircular de centro $0$ y radio $R$ positivamente orientado dado por
 $\gamma_R = \{z\in\C/ z = Re^{i\theta},0\leq \theta\leq \pi\}$.
 [falta completar]
 \end{prop}
@@ -1608,7 +1610,7 @@ n(f\circ \gamma,0) = \frac{1}{2\pi i}\int_{f\circ\gamma}\frac{dz}{z}&= \frac{1}{
 
 >
 \begin{theorem}[Teorema de Rouché]
-Sean $f(Z)$ y$g(z)$ dos funciones analíticas en un abierto $U$ y no idénticamente nulas en ninguna componente conexa de$U$, consideramos $\gamma$ un camino cerrado en $U$ tal que $n(\gamma,z)=0$ $\forall z\notin U$.
+Sean $f(z)$ y $g(z)$ dos funciones analíticas en un abierto $U$ y no idénticamente nulas en ninguna componente conexa de$U$, consideramos $\gamma$ un camino cerrado en $U$ tal que $n(\gamma,z)=0$ $\forall z\notin U$.
 
 \begin{align*}
 &\text{Si }\abs{f(z)-g(z)} < \abs{f(z)}\ \forall z\in\gamma^*\Rightarrow  \\
@@ -1617,7 +1619,7 @@ Sean $f(Z)$ y$g(z)$ dos funciones analíticas en un abierto $U$ y no idénticame
 \end{theorem}
 
 \begin{dem}
-Por la desigualdad supuesta observamos en primer lugar que $\gamma$ no pasa por ningún cero de $Ff$. Así podemos definir $h(z) = 1 +\frac{g(z)-f(z)}{f(z)}$ en un cierto entorno de $\gamma^*$.
+Por la desigualdad supuesta observamos en primer lugar que $\gamma$ no pasa por ningún cero de $f$. Así podemos definir $h(z) = 1 +\frac{g(z)-f(z)}{f(z)}$ en un cierto entorno de $\gamma^*$.
 
 Además si $z\in\gamma^*$ entonces $\abs{h(z)-1} =\frac{\abs{g(z)-f(z)}}{\abs{f(z)}}<1\ \forall z\in\gamma^*$.
 
@@ -1675,7 +1677,7 @@ Además todos estos ceros son distintos ya que en caso contrario $f'=0$.
 
 \textbf{3.} Tomemos $\varepsilon$ y $p$ de los apartados anteriores.  Entonces , sea $V = D(z_0,\varepsilon)\cap f^{-1}(D(0,p))\ni z_0$ y $V\subset  D(z_0,\varepsilon)$.
 
-Por la elección de $varepsilon$, $f(z) \neq 0\ \forall z\in V\backslash\{z_0\}$.
+Por la elección de $\varepsilon$, $f(z) \neq 0\ \forall z\in V\backslash\{z_0\}$.
 
 Además, si $z\in V\backslash\{z_0\}$ entonces se tiene que $0<\abs{f(z)}<p$ y por el apartado 2. $w=f(z)$ y existen $m$ puntos $w_0,\ldots,w_m$ en $D(z_0,\varepsilon)$ de imagen $w$ con $0<\abs{w}<p$ y entonces, por definición de $V$, los puntos $w_k$ están en $V$ para $k = 1,2,\ldots,m$.$\qed$
 \end{dem}
@@ -1709,7 +1711,7 @@ Sea $f(z)$ una función analítica en $z_0$
 \begin{dem}
 \textbf{1.} Supongamos $f'(z_0)\neq 0$ y consideremos $g(z) = f(z)-f(z_0)$ analítica en $z_0$ con  $g(z_0) = 0$ y $g'(z_0) \neq 0$.
 
-Así por el apartado 3 de la proposición anterior existe un abierto $V\ni z:_0$ tal que $\forall z\in V\backslash\{z_0\}$ existe un único$w \in V\backslash\{z_0\}$ de imagen $g(z)$ entonces $f$ es inyectiva en $V$.
+Así por el apartado 3 de la proposición anterior existe un abierto $V\ni z_0$ tal que $\forall z\in V\backslash\{z_0\}$ existe un único $w \in V\backslash\{z_0\}$ de imagen $g(z)$ entonces $f$ es inyectiva en $V$.
 
 \textbf{2.} Supongamos que $f'(z_0)=0$ entonces $g(z) = f(z)-f(z_0)$ analítica en $z_0$ y $g(z_0)= g'(z_0) = 0$.Es decir $z_0$ es un cero de orden mayor que 2. Y por el apartado anterior $g$ no es inyectiva y por lo tanto $f$ tampoco.$\qed$
 
@@ -1727,7 +1729,7 @@ Veamos que $f^{-1}$ es analítica en $f(U)$. Veamos que $f^{-1}$ es derivable en
 
 Sea $w_0\in f(U)$:
 $$
-\lim_{w\to w_0}\frac{f^{-1}(w) - f^{-1}(w_0)}{w-w_0} = lim_{z\to z_0)} \frac{z-z_0}{f(z)-f(z_0)} *= \frac{1}{f'(z_0)}
+\lim_{w\to w_0}\frac{f^{-1}(w) - f^{-1}(w_0)}{w-w_0} = \lim_{z\to z_0} \frac{z-z_0}{f(z)-f(z_0)} = \frac{1}{f'(z_0)}
 $$
 
 $$\left[\begin{array}{ll}
@@ -1739,7 +1741,7 @@ f(z) = w &\Rightarrow f^{-1}(w) = z\\
 
 \chapter{Funciones enteras}
 \begin{defi}[Convergencia de productos infinitos]
-Sea $z_1,z_2,\ldots z_n$ una sucesión de números complejos no nulos. Consideremos $p_n =\prod_{k=1}^n z_k$. Si existe $\\displaystyle lim_{n\to \infty}p_n = p$ con $p\neq 0$ diremos que el producto infinito $\prod_{n\geq 1}z_n$ converge  a $p$. En caso contrario diremos que el producto no converge.
+Sea $z_1,z_2,\ldots z_n$ una sucesión de números complejos no nulos. Consideremos $p_n =\prod_{k=1}^n z_k$. Si existe $\displaystyle \lim_{n\to \infty}p_n = p$ con $p\neq 0$ diremos que el producto infinito $\prod_{n\geq 1}z_n$ converge  a $p$. En caso contrario diremos que el producto no converge.
 
 Si un producto infinito tiene una cantidad finita de términos iguales a $0$ y el resto verifica la definición anterior, también diremos que $\prod_{n\geq 1}z_n$ converge. De hecho , si existe $m\in \N$ tal que $\prod_{n\geq m+1}z_n$ verifica la definición inicial, se dice que el producto $\prod_{n\geq 1}z_n$ es convergente a $p = z_1z_2\cdots z_m\prod_{n\geq m+1}z_n$.
 \end{defi}
@@ -1791,7 +1793,7 @@ Diremos que una función $f(z)$ es meromorfa en un abierto $U$ cuando $F(z)$ es 
 \end{defi}
 
 \begin{col}
-Una función $f(z)$ es meromorfa en $\C$ si, y silo si, $f(z) = \frac{g(z)}{h(z)}$ con $g(z)$ y $h(z)$ funciones enteras y siendo $h(z)$ no idénticamente nula.
+Una función $f(z)$ es meromorfa en $\C$ si, y sOlo si, $f(z) = \frac{g(z)}{h(z)}$ con $g(z)$ y $h(z)$ funciones enteras y siendo $h(z)$ no idénticamente nula.
 \end{col}
 
 \begin{dem}
