@@ -405,7 +405,7 @@ Sea $\gamma_1$ un camino en $U$ que une $z_1$ y $z_2$, sea $\gamma_2$ otro camin
 
 Consideremos $\gamma = \gamma_1 -\gamma_2$ un camino cerrado, entonces:
 $$\int_\gamma f(z)dz = \int_{\gamma_1 -\gamma_2} f(z)dz = \int_{\gamma_1} f(z)dz - \int_{\gamma_2} f(z)dz$$
-Si $\int_\gamma f(z)dz$ entonces la integral sobre $\gamma_1$ es igual a la integral sobre $\gamma_2$ con lo que es independiente del camino.
+Si $\int_\gamma f(z)dz = 0$ entonces la integral sobre $\gamma_1$ es igual a la integral sobre $\gamma_2$ con lo que es independiente del camino.
 
 De la misma forma, si la integral es independiente del camino entonces $\displaystyle\int_{\gamma_1} f(z)dz - \int_{\gamma_2} f(z)dz = 0$.
 
@@ -424,7 +424,7 @@ $$
 \int_\gamma f(z)dz = \int_{\gamma_z} f(z)dz + \int_{[z,w]} f(z)dz + \int_{\gamma_z} f(z)dz = 0
 $$ 
 
-Por tanto $F(w)-F(z) = \int_{\gamma_w} f(z)dz - \int_{\gamma_z} f(z)dz = \int_{[z,w]} f(z)dz$ y al ser $\int_[z,w] 1ds = z-w$ se tiene que:
+Por tanto $F(w)-F(z) = \int_{\gamma_w} f(z)dz - \int_{\gamma_z} f(z)dz = \int_{[z,w]} f(z)dz$ y al ser $\int_{[z,w]} ds = z-w$ se tiene que:
 \begin{multline*}
 f(z) = \frac{f(z)}{w-z}\int_{[z,w]}ds= \frac{1}{w-z}\int_{[z,w]}f(z)ds \Rightarrow \frac{F(w)-F(z)}{w-z}-f(z) =\\
 \frac{\int_{[z,w]}f(z)ds}{w-z}-\frac{1}{w-z}\int_{[z,w]}f(z)ds = \frac{\int_{[z,w]}(f(s)-f(z))ds}{w-z}
@@ -555,7 +555,7 @@ Por el Teorema de Cauchy para triángulos, tomando $\Gamma = [z_0,z]\cup [z,z_1]
 $$\frac{F(z)-F(z_1)}{z-z_1} = \frac{\int_{[z_1,z]}f(w)dw}{z-z_1}$$
 
 $$
-\abs{ frac{\int_{[z_1,z]}f(w)dw}{z-z_1}}\leq M_f(\gamma) \frac{|z-z_1|}{z-z_1} \xrightarrow[z\to z_0]{} f(z)
+\abs{\frac{\int_{[z_1,z]}f(w)dw}{z-z_1}}\leq M_f(\gamma) \frac{|z-z_1|}{z-z_1} \xrightarrow[z\to z_0]{} f(z)
 $$
 $$
 \Rightarrow \abs{\frac{F(z)-F(z_1)}{z-z_1}-f(z_1)}\xrightarrow[z\to z_0]{} 0 \Rightarrow F'(z_1) = f(z_1)
@@ -831,7 +831,7 @@ Definimos los ciclos como sumas de la forma $\gamma = \sum_{j=1}^n a_i\gamma_i$ 
 
 \begin{theorem}
 Sea $U$ abierto y $\gamma_1$ y $\gamma_2$ dos caminos cerrados (o ciclos) entonces
-$$\int_{\gamma_1} f(z9dz = \int_{\gamma_2} f(z)dz\ \forall f \text{ analítica en }U \Leftrightarrow n(\gamma_1,z) = n(\gamma_2,z) \ \forall z\in \C\backslash U$$
+$$\int_{\gamma_1} f(z)dz = \int_{\gamma_2} f(z)dz\ \forall f \text{ analítica en }U \Leftrightarrow n(\gamma_1,z) = n(\gamma_2,z) \ \forall z\in \C\backslash U$$
 \end{theorem}
 
 \section{Aplicaciones de Teoría de Cauchy}
@@ -845,7 +845,7 @@ Sea $z_0 \in U$, definimos $F(z) = \int_{[z_0,z]} f(w)dw \ \forall z\in U$.
 
 Tomemos $h \in \C$ tal que $|h| \ll |z_0-z|$ entonces:
 \begin{multline*}
-\abs{ \frac{F(z+h)-F(z)}{h}-f(z9} = \abs{ \frac{\int_{[z_0,z+h]}f(w)dw -\int_{[z_0,z]}f(w)dw}{h}-f(z)} =\\
+\abs{ \frac{F(z+h)-F(z)}{h}-f(z)} = \abs{ \frac{\int_{[z_0,z+h]}f(w)dw -\int_{[z_0,z]}f(w)dw}{h}-f(z)} =\\
  \int_{[z_0,z+h]}f(w)dw) + \int_{[z+h,z]}f(w)dw)+\int_{[z,z_0]}f(w)dw = 0\\
 \Rightarrow \abs{ \frac{\int_{[z_0,z+h]}f(w)dw}{h} - \frac{\int_{[z,z+h]}f(w)dw}{h}} = \abs{ \frac{\int_{[z,z+h]}f(w)dw}{h}} \\
 \leq |f(w)-f(z)| \xrightarrow[h\to 0]{} 0 \Rightarrow F'(z) = f(z) \qed
@@ -1240,7 +1240,7 @@ Sea $\{f_n(z)\}_n$ una sucesión de funciones analíticas en un abierto $U$ tal 
 Veamos que $f(z)$ es continua:
 $$\text{Sea } \varepsilon >0,\ N \in \N\ / |f_n(z)-f(z)| < \varepsilon/3\ \forall n> N,\ \forall z\in U$$
 $$\text{Sea } z_0 \in U \Rightarrow \exists \delta >0\ /\ |f_N(z)-f_N(z_0)|<\varepsilon/3 \text{ si }|z-z_0|<\delta$$
-$$ \Rightarrow |f(z)-f(z_0)| \leq |f(z)-f_N(z)|+|f_N(z9-f_N(z_0)|+|f_N(z_0)-f(z_0)|<\varepsilon$$
+$$ \Rightarrow |f(z)-f(z_0)| \leq |f(z)-f_N(z)|+|f_N(z)-f_N(z_0)|+|f_N(z_0)-f(z_0)|<\varepsilon$$
 Entonces $f(z)$ es continua en $z_0$. Y si tomamos $k$ un compacto de $U$ y $\Gamma$ la frontera de $\triangle$ tenemos que
 $$\int_\Gamma f(z)dz = \lim_{n\to \infty}\int_\Gamma f_n(z)dz = 0 \xRightarrow{T^a\ Morera} f(z) \text{ es analítica en } k\Rightarrow \text{ es analítica en } U.$$
 
